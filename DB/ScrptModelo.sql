@@ -1,0 +1,35 @@
+CREATE DATABASE Encuestas;
+USE Encuestas;
+
+CREATE TABLE CUENTA(
+	id INT IDENTITY(1,1) PRIMARY KEY,
+	usuario VARCHAR(80) NOT NULL,
+	password VARCHAR(90) NOT NULL
+);
+
+
+CREATE TABLE ENCUESTA(
+	id	INT IDENTITY(1,1) PRIMARY KEY,
+	nombre VARCHAR(50) NOT NULL,
+	descripcion VARCHAR(200)
+);
+
+CREATE TABLE DET_ENC (
+	id INT IDENTITY(1,1) PRIMARY KEY,
+	id_usuario INT NOT NULL,
+	id_encuesta INT NOT NULL, 
+	fecha DATE,
+	CONSTRAINT fk_usuario_det_enc FOREIGN KEY(id_usuario) REFERENCES CUENTA(id),
+	CONSTRAINT fk_encuesta_det_enc FOREIGN KEY(id_encuesta) REFERENCES ENCUESTA(id)
+
+);
+
+CREATE TABLE CAMPO (
+	id INT IDENTITY(1,1) PRIMARY KEY,
+	nombre VARCHAR(50) NOT NULL,
+	titulo VARCHAR(50) NOT NULL,
+	es_requerido BIT NOT NULL, 
+	tipo_campo VARCHAR(7) NOT NULL,
+	id_encuesta INT NOT NULL,
+	CONSTRAINT fk_encuesta_campo FOREIGN KEY(id_encuesta) REFERENCES ENCUESTA(id)
+);
