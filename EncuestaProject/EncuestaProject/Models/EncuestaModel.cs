@@ -16,7 +16,6 @@ namespace EncuestaProject.Models
         public virtual DbSet<CUENTA> CUENTA { get; set; }
         public virtual DbSet<DET_ENC> DET_ENC { get; set; }
         public virtual DbSet<ENCUESTA> ENCUESTA { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

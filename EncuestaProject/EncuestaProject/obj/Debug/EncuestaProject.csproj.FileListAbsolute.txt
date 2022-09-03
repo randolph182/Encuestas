@@ -77,3 +77,7 @@ C:\Users\rando\Documents\GitHub\Encuestas\EncuestaProject\EncuestaProject\obj\De
 C:\Users\rando\Documents\GitHub\Encuestas\EncuestaProject\EncuestaProject\obj\Debug\EncuestaProject.csproj.CopyComplete
 C:\Users\rando\Documents\GitHub\Encuestas\EncuestaProject\EncuestaProject\obj\Debug\EncuestaProject.dll
 C:\Users\rando\Documents\GitHub\Encuestas\EncuestaProject\EncuestaProject\obj\Debug\EncuestaProject.pdb
+C:\Users\rando\Documents\GitHub\Encuestas\EncuestaProject\EncuestaProject\bin\EntityFramework.dll
+C:\Users\rando\Documents\GitHub\Encuestas\EncuestaProject\EncuestaProject\bin\EntityFramework.SqlServer.dll
+C:\Users\rando\Documents\GitHub\Encuestas\EncuestaProject\EncuestaProject\bin\EntityFramework.xml
+C:\Users\rando\Documents\GitHub\Encuestas\EncuestaProject\EncuestaProject\bin\EntityFramework.SqlServer.xml

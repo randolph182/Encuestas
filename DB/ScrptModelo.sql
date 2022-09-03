@@ -24,12 +24,28 @@ CREATE TABLE DET_ENC (
 
 );
 
+CREATE TABLE TIPO_CAMPO(
+	 id INT IDENTITY(1,1) PRIMARY KEY,
+	 nombre Varchar(10)
+);
+
 CREATE TABLE CAMPO (
 	id INT IDENTITY(1,1) PRIMARY KEY,
 	nombre VARCHAR(50) NOT NULL,
 	titulo VARCHAR(50) NOT NULL,
 	es_requerido BIT NOT NULL, 
-	tipo_campo VARCHAR(7) NOT NULL,
-	id_encuesta INT NOT NULL,
-	CONSTRAINT fk_encuesta_campo FOREIGN KEY(id_encuesta) REFERENCES ENCUESTA(id)
+	id_tipo_campo INT NOT NULL,
+	CONSTRAINT pk_tcampo_campo FOREIGN KEY(id_tipo_campo) REFERENCES TIPO_CAMPO(id)
+);
+
+
+
+
+CREATE TABLE ENC_CAMPO(
+	id_encuesta  INT NOT NULL,
+	id_campo INT NOT NULL,
+	fecha DATE NOT NULL,
+	CONSTRAINT pk_id_enc_campo PRIMARY KEY(id_encuesta, id_campo),
+	CONSTRAINT fk_enc_enc_campo FOREIGN KEY(id_encuesta) REFERENCES ENCUESTA(id),
+	CONSTRAINT fk_campo_enc_campo FOREIGN KEY(id_campo) REFERENCES CAMPO(id)
 );

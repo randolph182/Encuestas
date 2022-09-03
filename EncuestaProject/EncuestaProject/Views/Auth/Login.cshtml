@@ -1,0 +1,21 @@
+﻿@model EncuestaProject.Models.CUENTA
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2> 
+
+@using (Html.BeginForm()) { 
+    @Html.LabelFor(c => c.usuario,"Nombre de Usuario")
+    @Html.TextBoxFor(c => c.usuario, new {type = "text"})
+    <br />
+    @Html.LabelFor(c => c.password,"Constrasenia")
+    @Html.PasswordFor(c =>c.password)
+    <br />
+
+    <button>Ingresar</button>
+}
+<br />
+
+@TempData["mensaje"] 
