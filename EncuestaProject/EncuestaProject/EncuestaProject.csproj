@@ -141,6 +141,7 @@
     <Compile Include="Models\DET_ENC.cs" />
     <Compile Include="Models\ENCUESTA.cs" />
     <Compile Include="Models\EncuestaModel.cs" />
+    <Compile Include="Models\TIPO_CAMPO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

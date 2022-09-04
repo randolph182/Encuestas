@@ -1,3 +1,4 @@
+
 CREATE DATABASE Encuestas;
 USE Encuestas;
 
@@ -34,18 +35,9 @@ CREATE TABLE CAMPO (
 	nombre VARCHAR(50) NOT NULL,
 	titulo VARCHAR(50) NOT NULL,
 	es_requerido BIT NOT NULL, 
+	id_encuesta INT NOT NULL,
 	id_tipo_campo INT NOT NULL,
-	CONSTRAINT pk_tcampo_campo FOREIGN KEY(id_tipo_campo) REFERENCES TIPO_CAMPO(id)
+	CONSTRAINT pk_tcampo_campo FOREIGN KEY(id_tipo_campo) REFERENCES TIPO_CAMPO(id),
+	CONSTRAINT pk_enc_campo FOREIGN KEY(id_encuesta) REFERENCES ENCUESTA(id)
 );
 
-
-
-
-CREATE TABLE ENC_CAMPO(
-	id_encuesta  INT NOT NULL,
-	id_campo INT NOT NULL,
-	fecha DATE NOT NULL,
-	CONSTRAINT pk_id_enc_campo PRIMARY KEY(id_encuesta, id_campo),
-	CONSTRAINT fk_enc_enc_campo FOREIGN KEY(id_encuesta) REFERENCES ENCUESTA(id),
-	CONSTRAINT fk_campo_enc_campo FOREIGN KEY(id_campo) REFERENCES CAMPO(id)
-);

@@ -16,6 +16,7 @@ namespace EncuestaProject.Models
         public virtual DbSet<CUENTA> CUENTA { get; set; }
         public virtual DbSet<DET_ENC> DET_ENC { get; set; }
         public virtual DbSet<ENCUESTA> ENCUESTA { get; set; }
+        public virtual DbSet<TIPO_CAMPO> TIPO_CAMPO { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -25,10 +26,6 @@ namespace EncuestaProject.Models
 
             modelBuilder.Entity<CAMPO>()
                 .Property(e => e.titulo)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<CAMPO>()
-                .Property(e => e.tipo_campo)
                 .IsUnicode(false);
 
             modelBuilder.Entity<CUENTA>()
@@ -63,6 +60,16 @@ namespace EncuestaProject.Models
                 .HasMany(e => e.DET_ENC)
                 .WithRequired(e => e.ENCUESTA)
                 .HasForeignKey(e => e.id_encuesta)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<TIPO_CAMPO>()
+                .Property(e => e.nombre)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<TIPO_CAMPO>()
+                .HasMany(e => e.CAMPO)
+                .WithRequired(e => e.TIPO_CAMPO)
+                .HasForeignKey(e => e.id_tipo_campo)
                 .WillCascadeOnDelete(false);
         }
     }

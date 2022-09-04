@@ -1,7 +1,16 @@
-﻿
+﻿@model EncuestaProject.Models.ENCUESTA
 @{
     ViewBag.Title = "Crear";
 }
 
-<h2>Crear</h2>
+<h2>Creacion de Encuesta</h2>
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(c => c.nombre, "Nombre")
+    @Html.TextBoxFor(c => c.nombre, new { type = "text" })
+    <br />
+    @Html.LabelFor(c => c.descripcion, "descripcion")
+    @Html.TextAreaFor(c => c.descripcion, new { type = "text" })
+    <br />
+}
 

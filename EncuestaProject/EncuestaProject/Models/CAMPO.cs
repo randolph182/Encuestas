@@ -21,12 +21,12 @@ namespace EncuestaProject.Models
 
         public bool es_requerido { get; set; }
 
-        [Required]
-        [StringLength(7)]
-        public string tipo_campo { get; set; }
-
         public int id_encuesta { get; set; }
 
+        public int id_tipo_campo { get; set; }
+
         public virtual ENCUESTA ENCUESTA { get; set; }
+
+        public virtual TIPO_CAMPO TIPO_CAMPO { get; set; }
     }
 }

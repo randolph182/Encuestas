@@ -9,7 +9,6 @@ namespace EncuestaProject.Models
     using System.Linq;
     using System.Security.Cryptography;
     using System.Text;
-    using System.Web.Services.Description;
 
     [Table("CUENTA")]
     public partial class CUENTA
